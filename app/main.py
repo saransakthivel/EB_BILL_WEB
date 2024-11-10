@@ -1,9 +1,5 @@
 from fastapi import FastAPI
+from .routers import bill
 
 app = FastAPI()
-
-@app.get('/bill')
-
-def index():
-    return {'message': 'Welcome to PSG College of Arts and Science, Coimbatore'}
-
+app.include_router(bill.APIRouter)
